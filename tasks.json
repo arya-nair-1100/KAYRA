@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Submit Assignment 1",
+    "subject": "Mathematics",
+    "deadline": "2026-09-25",
+    "priority": "high",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Read Chapter 4",
+    "subject": "Physics",
+    "deadline": "2026-09-21",
+    "priority": "medium",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Practice Lab Report",
+    "subject": "Chemistry",
+    "deadline": "2026-09-20",
+    "priority": "high",
+    "done": true
+  },
+  {
+    "id": 4,
+    "title": "Economics Assignment",
+    "subject": "Economics",
+    "deadline": "2026-09-21",
+    "priority": "high",
+    "done": false
+  }
+]
