@@ -1,0 +1,28 @@
+{
+  "Monday": [
+    {"time": "08:00", "subject": "CNLA", "room": "707"},
+    {"time": "9:15", "subject": "PDSA", "room": "707"},
+    {"time": "10:05", "subject": "CNLA", "room": "707"},
+    {"time": "11:00", "subject": "CNLA", "room": "Shannon or Turing"},
+  ],
+  "Tuesday": [
+    {"time": "10:00", "subject": "Chemistry", "room": "Lab 1"},
+    {"time": "13:00", "subject": "Computer Science", "room": "Lab 3"}
+  ],
+  "Wednesday": [
+    {"time": "09:00", "subject": "Mathematics", "room": "A101"},
+    {"time": "11:00", "subject": "History", "room": "D102"},
+    {"time": "15:00", "subject": "Physics Lab", "room": "Lab 2"}
+  ],
+  "Thursday": [
+    {"time": "10:00", "subject": "English", "room": "C301"},
+    {"time": "12:00", "subject": "Computer Science", "room": "Lab 3"},
+    {"time": "14:00", "subject": "Chemistry", "room": "Lab 1"}
+  ],
+  "Friday": [
+    {"time": "09:00", "subject": "History", "room": "D102"},
+    {"time": "11:00", "subject": "Mathematics", "room": "A101"}
+  ],
+  "Saturday": [],
+  "Sunday": []
+}
