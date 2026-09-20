@@ -1,0 +1,5 @@
+# Kayra Assistant — Python dependencies
+# Install with: pip install -r requirements.txt
+
+pyttsx3>=2.90       # Offline, cross-platform text-to-speech
+requests>=2.31.0    # HTTP requests for Open-Meteo weather API
