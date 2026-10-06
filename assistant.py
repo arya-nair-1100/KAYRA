@@ -162,34 +162,39 @@ def build_briefing(weather: Optional[dict] = None) -> str:
 
 
 # ── Text-to-speech ────────────────────────────────────────────────────────────
-
 def speak(text: str, rate: int = 165, volume: float = 1.0) -> None:
     """
-    Read ``text`` aloud using pyttsx3 (fully offline).
-
-    Parameters
-    ----------
-    text   : The string to speak.
-    rate   : Words per minute (default 165).
-    volume : Volume level 0.0–1.0 (default 1.0).
+    Read ``text`` aloud using pyttsx3, strictly locked to a female voice.
     """
     try:
         engine = pyttsx3.init()
         engine.setProperty("rate", rate)
         engine.setProperty("volume", volume)
 
-        # Prefer a female voice when available
         voices = engine.getProperty("voices")
+        selected_voice = None
+        
+        # 1. Try matching explicit female voice names first
         for voice in voices:
-            if "female" in voice.name.lower() or "zira" in voice.id.lower():
-                engine.setProperty("voice", voice.id)
+            name_lower = voice.name.lower()
+            id_lower = voice.id.lower()
+            if any(target in name_lower or target in id_lower for target in ["samantha", "karen", "victoria", "zira"]):
+                selected_voice = voice.id
                 break
+        
+        # 2. Strict Fallback: On almost all default OS installs, index 1 is the primary female voice
+        if not selected_voice and len(voices) > 1:
+            selected_voice = voices[1].id
+        elif not selected_voice and voices:
+            selected_voice = voices[0].id
+
+        if selected_voice:
+            engine.setProperty("voice", selected_voice)
 
         engine.say(text)
         engine.runAndWait()
     except Exception as exc:
         print(f"[Kayra] TTS error: {exc}", file=sys.stderr)
-        print("[Kayra] Printing briefing to console instead.\n")
         print(text)
 
 
